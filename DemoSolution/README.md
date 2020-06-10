@@ -18,4 +18,4 @@ C# 9 is included with .NET 5.0 preview SDK
 ## WindowsFormsApp
 Windows Forms app using .NET Core, to ensure this project and objects load properly
 please enable this preview feature on VS 2019:
-![Windows Forms Core preview settings](https://pasteboard.co/Jcq7LiH.png)
+![Windows Forms Core preview settings](./misc/winformspreview.PNG)
