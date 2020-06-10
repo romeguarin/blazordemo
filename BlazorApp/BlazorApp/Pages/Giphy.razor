@@ -1,0 +1,30 @@
+@page "/giphy"
+@inject BlazorApp.Services.GiphyService giphyService;
+
+<div class="row">
+    <div class="col-xs-12">
+        <input type="text" @bind-value="_tagValue" />
+        <button @onclick="FindARandomGif">Random GIF</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <iframe src="@_embedUrl" width="540" height="540" />
+    </div>
+</div>
+
+@code {
+
+    private string _tagValue = "Hello world";
+    private string _embedUrl;
+
+    protected virtual async void FindARandomGif()
+    {
+        var giphyObject = await giphyService.GetRandmonGif(_tagValue ?? "Test");
+        if (giphyObject != null && giphyObject.Data.GiphyImages != null)
+        {
+            _embedUrl = giphyObject.Data.EmbedUrl;
+        }
+        StateHasChanged();
+    }
+}

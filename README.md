@@ -1,2 +1,2 @@
-# blazordemo
-Blazor Demo for Tech Guild session
+# GuildDemo
+Projects used in Guild Demo
