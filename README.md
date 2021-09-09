@@ -1,4 +1,4 @@
-.NET MAUI Blazor sample
+.NET MAUI Blazor sample  
 Pre-requisites:  
 - Install .NET 6 Preview and .NET MAUI workloads (including Blazor Web)  
   * ensure dotnet CLI is also installed as we will use that to install tools for and build maui apps  
