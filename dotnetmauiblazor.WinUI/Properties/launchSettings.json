@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "dotnetmauiblazor.WinUI": {
+      "commandName": "MsixPackage",
+      "nativeDebugging": false
+    }
+  }
+}

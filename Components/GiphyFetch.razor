@@ -1,0 +1,38 @@
+﻿@inject DataServices.Services.GiphyServices GiphyServices;
+
+<div class="row">
+    <div class="col-xs-12">
+        <form @onsubmit="FindARandomGif">
+            <input @bind="_searchValue"/>
+            <button type="submit">Random GIF</button>
+        </form>
+        <button type="button" @onclick="Reset">Reset</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <iframe src="@_embedUrl" class="responsive-iframe" />
+    </div>
+</div>
+
+@code {
+    string _searchValue;
+
+    string _embedUrl;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _searchValue = "Hello world";
+        _embedUrl = await GiphyServices.GetRandomGifUrl(_searchValue ?? "Test");
+    }
+
+    async Task FindARandomGif(EventArgs e)
+    {
+        _embedUrl = await GiphyServices.GetRandomGifUrl(_searchValue ?? "Test");
+    }
+
+    void Reset(EventArgs e)
+    {
+        _embedUrl = "";
+    }
+}
